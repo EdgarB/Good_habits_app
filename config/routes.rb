@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+    root 'activities#index'
+
+    #Activities routes
+
+    get 'activities/new'
+    post 'activities', to: 'activities#create'
+
+    #Logs routes
+    get 'activities/:activity_id/logs/new', to: 'logs#new'
+    post 'activities/:activity_id/logs', to: 'logs#create'
+
+
+    devise_for :users
+    get '*path' => redirect('/')
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
