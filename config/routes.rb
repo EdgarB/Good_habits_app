@@ -3,13 +3,15 @@ Rails.application.routes.draw do
     root 'activities#index'
 
     #Activities routes
-
-    get 'activities/new'
-    post 'activities', to: 'activities#create'
+    resources :activities, only:[:index,:new,:create] do
+        resources :logs, only:[:index, :new,:create]
+    end
+    #get 'activities/new'
+    #post 'activities', to: 'activities#create'
 
     #Logs routes
-    get 'activities/:activity_id/logs/new', to: 'logs#new'
-    post 'activities/:activity_id/logs', to: 'logs#create'
+    #get 'activities/:activity_id/logs/new', to: 'logs#new'
+    #post 'activities/:activity_id/logs', to: 'logs#create'
 
 
     devise_for :users

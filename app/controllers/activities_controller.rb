@@ -18,14 +18,16 @@ class ActivitiesController < ApplicationController
       act_to_save.description = params["activity"]["description"]
       act_to_save.frequency = params["activity"]["frequency"]
       act_to_save.user = User.find(current_user.id)
-      if(act_to_save)
-          act_to_save.save!
+      if(act_to_save.save)
 
+          redirect_to root_path, notice: "New habit saved succesfully."
 
           #current_user.activities << act_to_save
           #current_user.save
+      else
+          redirect_to root_path, alert: "Couldn't save your new habit :("
       end
-      redirect_to root_path
+
   end
 
   private

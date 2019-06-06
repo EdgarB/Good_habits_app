@@ -1,2 +1,55 @@
-<h1>Logs#new</h1>
-<p>Find me in app/views/logs/new.html.erb</p>
+
+<div class="container-fluid">
+    <div class="container mt-5 pt-5 pb-5 card">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center"><%=@act_name%></h1>
+            </div>
+
+            <div class="col-12 ">
+
+                <%= form_for @log, url: {action: "create"} do |f| %>
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="form-group">
+                          <%= f.label :description,"How do you feel?", for:"log_description" %><br />
+                          <%= f.text_area :description,rows: 3, autofocus: true, autocomplete: "log_description", id: "log_description", placeholder:"You can write any thoughs or anything you experienced.\n\nThink it like a dairy of thoughs and feelings...", class:"form-control" %>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-group">
+                            <%= f.label "Done at", for: "log_done_at_day"%><br />
+
+
+                            <%= f.datetime_field :done_at, autocomplete: "log_done_at_day", id:"log_done_at_day",  class:"form-control" %>
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row pr-3 pl-3">
+
+                    <div class="col-4 col-md-6 col-xl-10">
+
+                    </div>
+                    <div class="col-4 col-md-3 col-xl-1 text-right">
+                        <%= link_to "Cancel", root_path,method: :get, class: "btn btn-secondary"  %>
+                    </div>
+                    <div class="col-4 col-md-3 col-xl-1 text-right">
+                        <%= f.submit "Create", class:"btn btn-primary" %>
+                    </div>
+
+                </div>
+
+
+
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
