@@ -1,3 +1,29 @@
-<div class="container">
-    <h1>LOGS INDEX!</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Logs of <%= @act_name %></h1>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-3">
+
+        </div>
+        <div class="col-6">
+            <div class="row">
+
+                <% @logs.each do |log| %>
+                    <div class="col-12">
+                        <div class="card mt-2 mb-2 p-3">
+                            <h5 class="card-title"><%=log.done_at%> </h5>
+                            <p class= "card-text"><%=log.description%> </p>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+        <div class="col-3">
+
+        </div>
+    </div>
+
 </div>
