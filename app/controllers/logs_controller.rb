@@ -1,5 +1,7 @@
 class LogsController < ApplicationController
     before_action :authenticate_user!
+    def index
+    end
   def new
       current_act = Activity.find(params[:activity_id]);
       if(current_act)

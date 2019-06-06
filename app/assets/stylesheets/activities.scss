@@ -16,3 +16,33 @@
     box-shadow: 0.5rem 0.5rem 2.5rem #888888;
 
 }
+
+.bluish_background{
+    background:#53a7ea;
+}
+
+.activity_card{
+    transition:all 0.3s ease;
+}
+
+.activity_card:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.grow{
+    transition:all 0.3s ease;
+}
+.grow:hover
+{
+
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+
+}
+
+.hidden{
+     visibility: hidden;
+}
