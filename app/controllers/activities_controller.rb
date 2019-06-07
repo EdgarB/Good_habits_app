@@ -25,7 +25,7 @@ class ActivitiesController < ApplicationController
           #current_user.activities << act_to_save
           #current_user.save
       else
-          redirect_to root_path, alert: "Couldn't save your new habit :("
+          redirect_to new_activity_path, alert: "Couldn't save your new habit, please fill all the neccesary fields."
       end
 
   end

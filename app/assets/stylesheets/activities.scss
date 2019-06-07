@@ -1,6 +1,59 @@
 // Place all the styles related to the activities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$nav_background_color : #9fbd90;
+$nav_text_color : white;
+$background_color: #fffff3;
+
+#app_name{
+     font-family: 'Oswald', sans-serif;
+     font-size: 20em;
+}
+#app_description{
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 3em;
+}
+
+.graphic_title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 5em;
+}
+
+#home_button{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+#nav_email{
+    color: #00413c;
+
+}
+
+.card_container{
+    background-color: white;
+}
+
+.card{
+    background-color: $background_color;
+}
+
+.content_text{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+.content_title{
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 5em;
+}
+
+.semi_title{
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+}
 
 .floating-button {
     font-size: 2rem;
@@ -21,6 +74,7 @@
     background:#53a7ea;
 }
 
+
 .activity_card{
     transition:all 0.3s ease;
 }
@@ -31,18 +85,42 @@
     transform: scale(1.1);
 }
 
-.grow{
-    transition:all 0.3s ease;
+body{
+    background-color: $background_color;
 }
-.grow:hover
-{
-
-        -webkit-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        transform: scale(1.3);
-
+.top_navbar{
+    color: $nav_text_color;
+    background-color: $nav_background_color;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
 }
 
-.hidden{
-     visibility: hidden;
+.bg-green-accent{
+    background-color: $nav_background_color;
+}
+
+.img_trees{
+    background-image: url("front_image.jpg");
+    background-position:center;
+    width:100%;
+   height:auto;
+}
+.btn-primary{
+    background-color: #006d66;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+.btn-primary:hover{
+    background-color: #00413c;
+}
+
+a{
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+
+    color: #9fbd90;
+}
+a:hover{
+    color:#00413c;
 }

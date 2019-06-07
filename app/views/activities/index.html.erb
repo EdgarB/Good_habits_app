@@ -1,16 +1,31 @@
 
-<div class="container-fluid">
-    <div class="row ">
-        <% if !user_signed_in? %>
-        <div class="col-12 text-center">
-            <h1>HABITIZER</h1>
-            <p>Take a step towards your true self</p>
+
+
+
+
+<% if !user_signed_in? %>
+    <div class="container-fluid">
+        <div class="container ">
+            <h1 id="app_name" class="display-4 text-center">HABITIZER</h1>
+            <p id="app_description" class="lead text-center">Take a step towards your true self</p>
         </div>
-        <% else %>
-            <div class="col-3">
+
+    </div>
+
+
+<% else %>
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="content_title text-center">Your habits</h1>
+            </div>
+
+        </div>
+        <div class="row ">
+            <div class="col-2">
 
             </div>
-            <div class="col-6">
+            <div class="col-8">
                 <% @activities_from_user.each do |activity| %>
                     <div class="row m-2">
                         <div class="activity_card container card mt-2 mb-2 p-2">
@@ -18,7 +33,7 @@
                                 <div class="col-6">
                                     <div class="row">
                                         <div class="col-12">
-                                            <h5 class="card-title"><%= activity.name %></h5>
+                                            <h5 class="semi_title"><%= activity.name %></h5>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -55,10 +70,10 @@
                 <%end%>
             </div>
 
-            <div class="col-3   ">
+            <div class="col-2   ">
 
                  <%= link_to "+", new_activity_path,  class: 'btn btn-primary grow floating-button' %>
             </div>
-        <% end %>
+        </div>
     </div>
-</div>
+<% end %>

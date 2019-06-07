@@ -1,56 +1,56 @@
 
 <div class="container-fluid">
-    <div class="container mt-5 pt-5 pb-5 card">
+    <div class="container mt-5 pt-5 pb-5 ">
         <div class="row">
             <div class="col-2 col-md-1">
             </div>
             <div class="col-8 col-md-4">
-                <div class="container p-5">
-                    <div class="row pl-5">
-                        <h1>CREATE</h1>
+                <div class="container p-1 ">
+                    <div class="row pl-5 ">
+                        <h1 class="graphic_title">CREATE</h1>
                     </div>
                     <div class="row pl-5">
-                        <h1>A</h1>
+                        <h1 class="graphic_title">A</h1>
                     </div>
                     <div class="row pl-5">
-                        <h1>NEW</h1>
+                        <h1 class="graphic_title">NEW</h1>
                     </div>
                     <div class="row pl-5">
-                        <h1>HABIT</h1>
+                        <h1 class="graphic_title">HABIT</h1>
                     </div>
                 </div>
             </div>
             <div class="col-2 col-md-1">
             </div>
 
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 ">
                 <%= form_for @activity, url: {action: "create"} do |f| %>
-                <div class="row">
+                <div class="row pt-5">
 
                     <div class="col-12">
                         <div class="form-group">
-                          <%= f.label :name, for:"activity_name" %><br />
-                          <%= f.text_field :name, autofocus: true, autocomplete: "name", id: "activity_name", placeholder:"Enter your habit name", class:"form-control" %>
+                          <%= f.label :name, for:"activity_name", class:"semi_title" %><br />
+                          <%= f.text_field :name, autofocus: true, autocomplete: "name", id: "activity_name", placeholder:"Enter your habit name", class:"form-control content_text" %>
                         </div>
                     </div>
 
                     <div class="col-12">
                         <div class="form-group">
-                            <%= f.label :description, for: "activity_description"%><br />
-                            <%= f.text_field :description, autocomplete: "description", id:"activity_description", placeholder: "Enter a brief description of your new habit", class:"form-control" %>
+                            <%= f.label :description, for: "activity_description", class:"semi_title" %><br />
+                            <%= f.text_field :description, autocomplete: "description", id:"activity_description", placeholder: "Enter a brief description of your new habit", class:"form-control content_text" %>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <p>Frequency</p>
+                            <p class="semi_title">Frequency</p>
                             <%= f.radio_button :frequency,"Daily", id: "activity_daily_frequency" %>
-                                <%= f.label :frequency,"Daily", for:"activity_daily_frequency" %>
+                                <%= f.label :frequency,"Daily", for:"activity_daily_frequency", class: "content_text" %>
                             <%= f.radio_button :frequency,"Weekly", id: "activity_weekly_frequency" %>
-                                <%= f.label :frequency,"Weekly", for:"activity_weekly_frequency" %>
+                                <%= f.label :frequency,"Weekly", for:"activity_weekly_frequency", class:"content_text" %>
                         </div>
                     </div>
                 </div>
-                    <div class="row pr-3 pl-3">
+                    <div class="row pr-3 pl-3 mt-5 ">
 
                             <div class="col-4 col-md-6 col-xl-8">
 

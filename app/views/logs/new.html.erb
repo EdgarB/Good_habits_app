@@ -1,15 +1,15 @@
 
 <div class="container-fluid">
-    <div class="container mt-5 pt-5 pb-5 card">
+    <div class="container mt-5 pt-5 pb-5 ">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center"><%=@act_name%></h1>
+                <h1 class="text-center content_title"><%=@act_name%> log</h1>
             </div>
 
             <div class="col-12 ">
 
                 <%= form_for @log, url: {action: "create"} do |f| %>
-                <div class="row">
+                <div class="row content_text">
 
                     <div class="col-12">
                         <div class="form-group">

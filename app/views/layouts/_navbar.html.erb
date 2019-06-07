@@ -1,17 +1,17 @@
 
-<ul class="navbar navbar-light bg-light fixed-top navbar-expand-md">
+<ul class="navbar navbar-light top_navbar fixed-top navbar-expand-md">
     <div class="container ">
-        <%=link_to "Hoe", root_path,method: :get, class: "navbar-brand mb-0 h1"%>
+        <%=link_to "Home", root_path,method: :get, class: "navbar-brand mb-0 h1 " ,id:"home_button"%>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler content_text" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-end content_text" id="navbarNav">
             <ul class="navbar-nav">
                 <%if user_signed_in? %>
 
                     <li class="nav-item">
-                      <p class="pt-2"><%=current_user.email%> </p>
+                      <p id="nav_email" class="pt-2"><%=current_user.email%> </p>
                     </li>
                     <li class="nav-item">
                        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link' %>

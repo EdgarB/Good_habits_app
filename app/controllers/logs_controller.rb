@@ -21,16 +21,22 @@ class LogsController < ApplicationController
     end
 
     def create
-      log_to_save = Log.new
-      log_to_save.description = params[:log][:description]
-      log_to_save.done_at = params[:log][:done_at]
-      log_to_save.activity = Activity.find(params[:activity_id]);
-      if(log_to_save.save)
+        act_of_log = Activity.find(params[:activity_id]);
+        if(act_of_log)
+            log_to_save = Log.new
+            log_to_save.description = params[:log][:description]
+            log_to_save.done_at = params[:log][:done_at]
+            log_to_save.activity = act_of_log
+            if(log_to_save.save)
+                 redirect_to root_path , notice: "Your log was added succesfully."
+            else
+                redirect_to new_activity_log_path(act_of_log) , alert: "Couldn't save your log, please fill all the neccesary fields."
+            end
+        else
+            redirect_to root_path , alert: "Couldn't save your log, please select a valid habit."
+        end
 
-           redirect_to root_path , notice: "Your log was added succesfully."
-      else
-          redirect_to root_path , alert: "Couldn't save your log ..."
-      end
+
 
 
     end
